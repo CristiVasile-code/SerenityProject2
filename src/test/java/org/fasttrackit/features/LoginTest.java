@@ -12,4 +12,13 @@ public class LoginTest extends BaseTest {
         loginSteps.clickLoginButton();
         loginSteps.userIsLoggedIn(Constants.USER_NAME);
         }
+    @Test
+    public void verifyPasswordRequiredFieldTest(){
+        loginSteps.navigateToLoginPage();
+        loginSteps.typeUserEmail(Constants.USER_EMAIL);
+        loginSteps.clickLoginButton();
+        loginSteps.checkPasswordFieldRequired();
+//        TODO: sa faci o metoda generala care sa verifice daca apare mesajul de this is a required field
+    }
+
 }

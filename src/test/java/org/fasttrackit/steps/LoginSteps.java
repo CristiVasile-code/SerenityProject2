@@ -1,9 +1,8 @@
 package org.fasttrackit.steps;
 
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.steps.ScenarioSteps;
-import org.fasttrackit.pages.HomePage;
-import org.fasttrackit.pages.LoginPage;
+import org.fasttrackit.utils.Messages;
+import org.junit.Assert;
 
 public class LoginSteps extends BaseSteps {
 
@@ -13,6 +12,8 @@ public class LoginSteps extends BaseSteps {
         homePage.clickOnAccountButton();
         homePage.clickOnLoginLink();
     }
+
+
     @Step
     public void typeUserEmail(String email){
         loginPage.setEmailField(email);
@@ -38,4 +39,9 @@ public class LoginSteps extends BaseSteps {
 //        Assert.assertEquals("Hello, " + userName + "!", accountPage.getWelcomeText());
         accountPage.userIsLoggedIn(userName);
     }
+
+    public void checkPasswordFieldRequired(){
+        Assert.assertEquals(Messages.THIS_IS_A_REQUIRED_FIELD,loginPage.getRequiredPasswordText());
+    }
+
 }

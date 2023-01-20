@@ -10,12 +10,19 @@ import net.thucydides.core.annotations.DefaultUrl;
     public class HomePage extends BasePage {
         @FindBy(css = ".skip-account .label")
         private WebElementFacade accountButton;
+        @FindBy(css = "#header-account > div > ul > li:nth-child(2) > a")
+        private WebElementFacade wishListLink;
         @FindBy(css = "[title='Log In']")
         private WebElementFacade loginLink;
-        @FindBy(css="[title=\"Register\"]")
+        @FindBy(css="[title='Register']")
         private WebElementFacade registerLink;
-        @FindBy(css="[title=\"Log Out\"]")
+        @FindBy(css="[title='Log Out']")
         private WebElementFacade logoutLink;
+        @FindBy(id="search")
+        private WebElementFacade searchField;
+        @FindBy(css=".search-button")
+        private WebElementFacade searchButton;
+
 
         public void clickOnAccountButton(){
             clickOn(accountButton);
@@ -23,7 +30,19 @@ import net.thucydides.core.annotations.DefaultUrl;
         public void clickOnLoginLink(){
             clickOn(loginLink);
         }
+        public void clickOnWishlistLink(){
+            wishListLink.click();
+        }
         public void clickOnRegisterLink(){clickOn(registerLink);}
         public void clickOnLogoutLink(){clickOn(logoutLink);}
+        public void setSearchField(String value){
+            typeInto(searchField,value);
+        }
+        public void clickOnSearchButton(){
+            clickOn(searchButton);
+        }
+//        public void selectWishlist(){
+//            accountButton.selectByIndex(1).click();
+//        }
 
     }
