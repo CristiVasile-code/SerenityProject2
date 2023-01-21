@@ -18,6 +18,12 @@ public class RegisterPage extends BasePage{
     private WebElementFacade radioButtonIsSubscribed;
     @FindBy(css="[type=\"submit\"][title=\"Register\"]")
     private WebElementFacade registerButton;
+    @FindBy(css=".validation-advice")
+    private WebElementFacade requiredFieldMsg;
+    @FindBy(id="advice-validate-cpassword-confirmation")
+    private WebElementFacade passMismatch;
+    @FindBy(css=".error-msg")
+    private WebElementFacade existingUserMsg;
 
     public void setFirstNameField(String firstNameField){
         typeInto(firstName,firstNameField);
@@ -36,6 +42,11 @@ public class RegisterPage extends BasePage{
     }
     public void clickIsSubscribedRB(){clickOn(radioButtonIsSubscribed);}
     public void clickRegisterButton(){clickOn(registerButton);}
-
+    public boolean passMismatchMsg(){
+        return passMismatch.isDisplayed();
+    }
+    public boolean existingUserMsg(){
+        return existingUserMsg.isDisplayed();
+    }
 
 }

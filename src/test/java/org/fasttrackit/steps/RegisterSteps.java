@@ -24,4 +24,11 @@ public class RegisterSteps extends BaseSteps{
     public void userIsRegistered(){
         Assert.assertTrue("The user was not registered !",accountPage.userIsRegistered());
     }
+    public void passMismatchMessage(){
+        Assert.assertTrue(registerPage.passMismatchMsg());
+    }
+    public void existingUserMessage(){
+        Assert.assertTrue(registerPage.existingUserMsg());
+    }
+
 }
