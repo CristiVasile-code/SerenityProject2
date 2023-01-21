@@ -20,5 +20,6 @@ public class SearchSteps extends BaseSteps{
     @Step
     public void selectProduct(int index){
         searchResultsPage.selectProductFromSearchPage(index).click();
+        waitFor(3000);
     }
 }

@@ -12,13 +12,17 @@ public class WishlistTest extends BaseTest{
         searchSteps.selectProduct(1);
         productSteps.clickWishlistLink();
         wishlistSteps.isWishlistTitleDisplayed();
-    }
+        }
     @Test
     public void WishlistPage(){
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
         homepageSteps.navigateToWishlistPage();
-
-
-
+        wishlistSteps.isWishlistTitleDisplayed();
+    }
+    @Test
+    public void WishListLinkSidebarTest(){
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        accountSteps.clickWishlistLinkSidebar();
+        wishlistSteps.isWishlistTitleDisplayed();
     }
 }

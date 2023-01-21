@@ -6,7 +6,7 @@ import org.junit.Assert;
 public class WishlistSteps extends BaseSteps{
     @Step
     public void isWishlistTitleDisplayed(){
-        Assert.assertTrue(wishlistPage.succesWishlistMsg());
+        Assert.assertTrue("We are not on the wishlist page !",wishlistPage.succesWishlistMsg());
     }
     @Step
     public void selectWishlistFromAccountMenu(){

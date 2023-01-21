@@ -2,6 +2,7 @@ package org.fasttrackit.steps;
 
 import com.sun.xml.bind.v2.TODO;
 import net.thucydides.core.annotations.Step;
+import org.junit.Assert;
 
 public class ProductSteps extends BaseSteps{
     @Step
@@ -19,6 +20,7 @@ public class ProductSteps extends BaseSteps{
     @Step
     public void selectProductSize(){
         productPage.selectProductSize();
+        waitABit(3000);
     }
     @Step
     public void selectProductSize(int index){
@@ -30,16 +32,18 @@ public class ProductSteps extends BaseSteps{
     }
     @Step
     public void addProductToCart(){
-        selectProductColor();
-//        selectProductColor(0);
-        selectProductSize();
-//        selectProductSize(0);
+        selectProductColor(0);
+        selectProductSize(0);
         clickOnAddToCartButton();
     }
-//    TODO: de ce nu merge sa fol metodele de selectare size si color din lista ?
+//    TODO:sa adaug tratarea erorilor de gen e o singura culoare sau nu e disponibila marimea la culoare aia.
     @Step
     public void clickWishlistLink(){
         productPage.addToWishlistLink();
-        waitABit(3000);
+        waitABit(1000);
+    }
+    @Step
+    public void isReqFieldMsgDisplayed(){
+        Assert.assertTrue("Trebuia sa apara mesaj si sa nu ma lase sa trec !", productPage.isReqFieldMsgDisplayed());
     }
 }

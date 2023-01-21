@@ -7,12 +7,13 @@ public class RegisterTest extends BaseTest{
     public void registerTest(){
         homepageSteps.navigateToRegisterPage();
         registerSteps.typeFirstName("Cristi");
-        registerSteps.typeLastName("Vasile");
-        registerSteps.typeEmailAdress("cristivasilecodes1@gmail.com");
+//        registerSteps.typeLastName("Vasile");
+        registerSteps.typeEmailAdress("cristivasilecodes19@gmail.com");
         registerSteps.typePassword("123456");
         registerSteps.typeConfirmation("123456");
         registerSteps.clickSubscribeRB();
         registerSteps.clickRegisterButton();
-        registerSteps.userIsRegistered();}
-
+        registerSteps.userIsRegistered();
+        productSteps.isReqFieldMsgDisplayed();
+        }
     }

@@ -8,12 +8,9 @@ public class LoginSteps extends BaseSteps {
 
     @Step
     public void navigateToLoginPage(){
-//        homePage.open();
         homePage.clickOnAccountButton();
         homePage.clickOnLoginLink();
     }
-
-
     @Step
     public void typeUserEmail(String email){
         loginPage.setEmailField(email);
@@ -39,7 +36,6 @@ public class LoginSteps extends BaseSteps {
 //        Assert.assertEquals("Hello, " + userName + "!", accountPage.getWelcomeText());
         accountPage.userIsLoggedIn(userName);
     }
-
     public void checkPasswordFieldRequired(){
         Assert.assertEquals(Messages.THIS_IS_A_REQUIRED_FIELD,loginPage.getRequiredPasswordText());
     }

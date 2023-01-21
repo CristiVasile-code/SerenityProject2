@@ -14,6 +14,8 @@ import net.thucydides.core.annotations.DefaultUrl;
         private WebElementFacade wishListLink;
         @FindBy(css = "[title='Log In']")
         private WebElementFacade loginLink;
+        @FindBy(css = "[title='My Cart']")
+        private WebElementFacade cartLink;
         @FindBy(css="[title='Register']")
         private WebElementFacade registerLink;
         @FindBy(css="[title='Log Out']")
@@ -29,6 +31,9 @@ import net.thucydides.core.annotations.DefaultUrl;
         }
         public void clickOnLoginLink(){
             clickOn(loginLink);
+        }
+        public void clickOnCartLink(){
+            clickOn(cartLink);
         }
         public void clickOnWishlistLink(){
             wishListLink.click();

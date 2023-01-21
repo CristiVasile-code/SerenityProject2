@@ -16,6 +16,9 @@ public class AccountPage extends BasePage {
     private WebElementFacade menMenu;
     @FindBy(css=".nav-2-2.menu-active>a")
     private WebElementFacade subMenuItem;
+    @FindBy(css="body > div > div.page > div.main-container.col2-left-layout > div > " +
+            "div.col-left.sidebar.col-left-first > div > div.block-content > ul > li:nth-child(8) > a")
+    private WebElementFacade wishlistLinkLeftSidebar;
 
     public void userIsLoggedIn(String userName){
         welcomeTextElement.shouldContainOnlyText("Hello, " + userName + "!");
@@ -33,5 +36,8 @@ public class AccountPage extends BasePage {
 //        builder.moveToElement(menMenu);
 //        builder.moveToElement(subMenuItem);
 //        builder.click().build().perform();
+    }
+    public void clickWishListLinkSidebar(){
+        wishlistLinkLeftSidebar.click();
     }
 }

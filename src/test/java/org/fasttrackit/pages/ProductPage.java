@@ -10,9 +10,9 @@ public class ProductPage extends BasePage{
     private WebElementFacade productImg;
     @FindBy(css=".swatch-label>img")
     private WebElementFacade productColor;
-    @FindBy(css=".swatch-attr")
+    @FindBy(css="#configurable_swatch_color li")
     private List<WebElementFacade> listOfProductColors;
-    @FindBy(css="#configurable_swatch_size")
+    @FindBy(css="#configurable_swatch_size li")
     private List<WebElementFacade> listOfProductSizes;
     @FindBy(id="swatch79")
     private WebElementFacade productSize;
@@ -22,7 +22,8 @@ public class ProductPage extends BasePage{
     private WebElementFacade productName;
     @FindBy(css=".link-wishlist")
     private WebElementFacade wishlistLink;
-
+    @FindBy(css=".validation-advice")
+    private WebElementFacade requiredFieldMsg;
     public String getProductName(){
         return productName.getText();
     }
@@ -38,7 +39,7 @@ public class ProductPage extends BasePage{
     }
     public WebElementFacade selectProductSize(int index){
         waitFor(listOfProductSizes.get(0));
-        return listOfProductSizes.get(0);
+        return listOfProductSizes.get(index);
     }
     public void selectProductSize(){
         clickOn(productSize);
@@ -49,4 +50,8 @@ public class ProductPage extends BasePage{
     public void addToWishlistLink(){
         clickOn(wishlistLink);
     }
+    public boolean isReqFieldMsgDisplayed(){
+        return requiredFieldMsg.isDisplayed();
+    }
+
 }

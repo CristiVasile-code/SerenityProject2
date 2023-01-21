@@ -7,7 +7,6 @@ public class HomepageSteps extends BaseSteps{
     public void navigateToWishlistPage(){
         homePage.clickOnAccountButton();
         homePage.clickOnWishlistLink();
-        waitABit(3000);
     }
     @Step
     public void navigateToRegisterPage(){
@@ -16,8 +15,8 @@ public class HomepageSteps extends BaseSteps{
     }
     @Step
     public void navigateToLoginPage(){
-//        homePage.open();
         homePage.clickOnAccountButton();
         homePage.clickOnLoginLink();
     }
+
 }
