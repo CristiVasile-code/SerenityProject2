@@ -36,4 +36,12 @@ public class ProductTest extends BaseTest{
         productSteps.clickOnAddToCartButton();
         productSteps.isReqFieldMsgDisplayed();
     }
+    @Test
+    public void sortProductsByPrice(){
+//        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.searchForKeyword("top");
+        searchSteps.clickSearchIcon();
+        searchSteps.sortByPrice();
+        searchSteps.isPriceAscending();
+    }
 }

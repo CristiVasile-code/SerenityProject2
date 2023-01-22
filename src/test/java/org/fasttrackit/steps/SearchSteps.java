@@ -20,6 +20,16 @@ public class SearchSteps extends BaseSteps{
     @Step
     public void selectProduct(int index){
         searchResultsPage.selectProductFromSearchPage(index).click();
-        waitFor(3000);
+        waitFor(1500);
+    }
+    @Step
+    public void sortByPrice(){
+        searchResultsPage.selectByIndexFromDropdown(2);
+//        waitABit(2000);
+    }
+    @Step
+        public void isPriceAscending(){
+            Assert.assertTrue("Produsele nu sunt sortate crescator dupa pret",searchResultsPage.isPriceSortedAscending());
+            waitABit(3000);
     }
 }
