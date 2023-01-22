@@ -23,11 +23,28 @@ public class CartSteps extends BaseSteps{
         }
     @Step
     public void navigateToCartPage(){
-        homePage.clickOnAccountButton();
-        homePage.clickOnCartLink();
+//        homePage.clickOnAccountButton();
+//        homePage.clickOnCartLink();
+        clickOnCartIcon();
+        clickOnCartLink();
     }
     @Step
     public void emptyCart(){
         cartPage.clickEmptyCartButton();
     }
+    @Step
+    public void clickContinueShoppingButton(){
+        cartPage.clickContinueShoppingBtn();
+    }
+    @Step
+    public void compareTotals(){
+        Assert.assertEquals(cartPage.productPriceSum(),cartPage.getCartTotal());
+    }
+    public void clickOnCartIcon(){
+        homePage.clickCartIcon();
+    }
+    public void clickOnCartLink(){
+        homePage.clickCartLink();
+    }
+
 }

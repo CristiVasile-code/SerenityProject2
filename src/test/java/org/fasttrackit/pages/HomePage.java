@@ -24,6 +24,10 @@ import net.thucydides.core.annotations.DefaultUrl;
         private WebElementFacade searchField;
         @FindBy(css=".search-button")
         private WebElementFacade searchButton;
+        @FindBy(css=".header-minicart .icon")
+        private WebElementFacade cartIcon;
+        @FindBy(css=".cart-link")
+        private WebElementFacade minicartCartLink;
 
 
         public void clickOnAccountButton(){
@@ -49,5 +53,10 @@ import net.thucydides.core.annotations.DefaultUrl;
 //        public void selectWishlist(){
 //            accountButton.selectByIndex(1).click();
 //        }
-
+        public void clickCartIcon(){
+            cartIcon.click();
+        }
+        public void clickCartLink(){
+            minicartCartLink.click();
+        }
     }

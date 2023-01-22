@@ -13,7 +13,25 @@ public class CartTest extends BaseTest{
         }
         cartSteps.emptyCartMsg();
     }
-
-
-
+    @Test
+    public void totalPrice(){
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        cartSteps.navigateToCartPage();
+        cartSteps.emptyCart();
+        searchSteps.searchForKeyword("top");
+        searchSteps.clickSearchIcon();
+        searchSteps.selectProduct(1);
+        productSteps.addProductToCart();
+//        cartSteps.clickContinueShoppingButton();
+        searchSteps.searchForKeyword("shirt");
+        searchSteps.clickSearchIcon();
+        searchSteps.selectProduct(1);
+        productSteps.addProductToCart();
+//        cartSteps.clickContinueShoppingButton();
+        searchSteps.searchForKeyword("shirt");
+        searchSteps.clickSearchIcon();
+        searchSteps.selectProduct(0);
+        productSteps.addProductToCart();
+        cartSteps.compareTotals();
+    }
 }

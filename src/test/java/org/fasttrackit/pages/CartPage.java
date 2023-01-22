@@ -3,6 +3,8 @@ package org.fasttrackit.pages;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class CartPage extends BasePage{
     @FindBy(css=".success-msg span")
     private WebElementFacade succesMsg;
@@ -10,6 +12,12 @@ public class CartPage extends BasePage{
     private WebElementFacade cartPageTitle;
     @FindBy(id="empty_cart_button")
     private WebElementFacade emptyCartButton;
+    @FindBy(css=".btn-continue")
+    private WebElementFacade continueShoppingBtn;
+    @FindBy(css=".product-cart-total")
+    private List<WebElementFacade> productPriceList;
+    @FindBy(css=".a-right strong span")
+    private WebElementFacade cartTotal;
 
     public boolean isSuccesMsgDisplayed(){
         waitFor(succesMsg);
@@ -25,5 +33,17 @@ public class CartPage extends BasePage{
         waitFor(emptyCartButton);
         emptyCartButton.click();
     }
-
+    public void clickContinueShoppingBtn(){
+        continueShoppingBtn.click();
+    }
+    public int productPriceSum(){
+        waitFor(productPriceList.get(0));
+        int sum = 0;
+        for(WebElementFacade element:productPriceList){
+            sum += getIntFromPrice(element.getText());}
+        return sum;
+    }
+    public int getCartTotal(){
+       return getIntFromPrice(cartTotal.getText());
+    }
 }

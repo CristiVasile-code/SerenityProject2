@@ -6,6 +6,6 @@ public class BasePage extends PageObject {
     public int getIntFromPrice(String price) {
         return Integer.parseInt(price
                 .replaceAll(",", "")
-                .replaceAll(" RON", ""));
+                .replaceAll(" RON", ""))/100;
     }
 }
