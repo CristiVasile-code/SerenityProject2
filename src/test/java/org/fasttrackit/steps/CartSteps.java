@@ -1,6 +1,5 @@
 package org.fasttrackit.steps;
 
-import io.cucumber.java.bs.A;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 
@@ -21,13 +20,7 @@ public class CartSteps extends BaseSteps{
     public boolean isCartEmpty(){
         return cartPage.getCartPageTitleText().equalsIgnoreCase("SHOPPING CART IS EMPTY");
         }
-    @Step
-    public void navigateToCartPage(){
-//        homePage.clickOnAccountButton();
-//        homePage.clickOnCartLink();
-        clickOnCartIcon();
-        clickOnCartLink();
-    }
+
     @Step
     public void emptyCart(){
         cartPage.clickEmptyCartButton();
@@ -40,11 +33,8 @@ public class CartSteps extends BaseSteps{
     public void compareTotals(){
         Assert.assertEquals(cartPage.productPriceSum(),cartPage.getCartTotal());
     }
-    public void clickOnCartIcon(){
-        homePage.clickCartIcon();
+    @Step
+    public void clickBottomCheckoutBtn(){
+        cartPage.clickBottomCheckoutBtn();
     }
-    public void clickOnCartLink(){
-        homePage.clickCartLink();
-    }
-
 }

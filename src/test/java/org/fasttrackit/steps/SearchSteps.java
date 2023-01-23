@@ -32,4 +32,8 @@ public class SearchSteps extends BaseSteps{
             Assert.assertTrue("Produsele nu sunt sortate crescator dupa pret",searchResultsPage.isPriceSortedAscending());
             waitABit(3000);
     }
+    @Step
+    public void clickLeftsideBarMenLink(){
+        searchResultsPage.clickSideBarMenLink();
+    }
 }

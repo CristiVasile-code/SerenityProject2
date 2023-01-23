@@ -18,6 +18,8 @@ public class CartPage extends BasePage{
     private List<WebElementFacade> productPriceList;
     @FindBy(css=".a-right strong span")
     private WebElementFacade cartTotal;
+    @FindBy(css = ".cart-totals .btn-checkout")
+    private WebElementFacade bottomCheckOutButton;
 
     public boolean isSuccesMsgDisplayed(){
         waitFor(succesMsg);
@@ -45,5 +47,8 @@ public class CartPage extends BasePage{
     }
     public int getCartTotal(){
        return getIntFromPrice(cartTotal.getText());
+    }
+    public void clickBottomCheckoutBtn(){
+        clickOn(bottomCheckOutButton);
     }
 }

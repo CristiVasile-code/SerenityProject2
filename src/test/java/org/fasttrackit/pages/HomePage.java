@@ -1,7 +1,6 @@
 package org.fasttrackit.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 
@@ -14,8 +13,8 @@ import net.thucydides.core.annotations.DefaultUrl;
         private WebElementFacade wishListLink;
         @FindBy(css = "[title='Log In']")
         private WebElementFacade loginLink;
-        @FindBy(css = "[title='My Cart']")
-        private WebElementFacade cartLink;
+        @FindBy(css = ".top-link-cart")
+        private WebElementFacade dropDownCartLink;
         @FindBy(css="[title='Register']")
         private WebElementFacade registerLink;
         @FindBy(css="[title='Log Out']")
@@ -26,8 +25,10 @@ import net.thucydides.core.annotations.DefaultUrl;
         private WebElementFacade searchButton;
         @FindBy(css=".header-minicart .icon")
         private WebElementFacade cartIcon;
+        @FindBy(css = ".skip-cart .label")
+        private WebElementFacade cartLabelLink;
         @FindBy(css=".cart-link")
-        private WebElementFacade minicartCartLink;
+        private WebElementFacade viewShoppingCartLink;
 
 
         public void clickOnAccountButton(){
@@ -36,9 +37,7 @@ import net.thucydides.core.annotations.DefaultUrl;
         public void clickOnLoginLink(){
             clickOn(loginLink);
         }
-        public void clickOnCartLink(){
-            clickOn(cartLink);
-        }
+
         public void clickOnWishlistLink(){
             wishListLink.click();
         }
@@ -53,10 +52,17 @@ import net.thucydides.core.annotations.DefaultUrl;
 //        public void selectWishlist(){
 //            accountButton.selectByIndex(1).click();
 //        }
+        public void clickViewShoppingcartLink(){
+            viewShoppingCartLink.click();
+        }
         public void clickCartIcon(){
             cartIcon.click();
         }
-        public void clickCartLink(){
-            minicartCartLink.click();
+        public void clickCartLabelLink(){
+            cartLabelLink.click();
         }
+        public void clickDropdownCartLink(){
+            dropDownCartLink.click();
+        }
+
     }

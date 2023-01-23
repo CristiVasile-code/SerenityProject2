@@ -8,10 +8,7 @@ public class WishlistSteps extends BaseSteps{
     public void isWishlistTitleDisplayed(){
         Assert.assertTrue("We are not on the wishlist page !",wishlistPage.succesWishlistMsg());
     }
-    @Step
-    public void selectWishlistFromAccountMenu(){
-        homePage.clickOnWishlistLink();
-    }
+
 @Step
     public void clickAddAllToCartButton(){
         wishlistPage.clickAddAllToCartButton();

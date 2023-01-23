@@ -29,6 +29,8 @@ protected AccountSteps accountSteps;
 protected ProductSteps productSteps;
 @Steps
 protected WishlistSteps wishlistSteps;
+@Steps
+protected CheckoutSteps checkoutSteps;
 
 
 @Before

@@ -44,4 +44,17 @@ public class ProductTest extends BaseTest{
         searchSteps.sortByPrice();
         searchSteps.isPriceAscending();
     }
+    @Test
+    public void smokeTest(){
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.searchForKeyword("top");
+        searchSteps.clickSearchIcon();
+        searchSteps.clickLeftsideBarMenLink();
+        searchSteps.selectProduct(1);
+        productSteps.addProductToCart();
+        cartSteps.clickBottomCheckoutBtn();
+        checkoutSteps.doCheckOut();
+        checkoutSteps.isCheckOut();
+
+    }
 }

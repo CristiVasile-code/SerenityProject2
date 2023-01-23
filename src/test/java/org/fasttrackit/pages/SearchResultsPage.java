@@ -15,6 +15,8 @@ public class SearchResultsPage extends BasePage{
     private WebElementFacade sortDropdown;
     @FindBy(css=".products-grid .regular-price")
     private List<WebElementFacade> regularPriceList;
+    @FindBy(css = "#narrow-by-list li:nth-child(2)>a")
+    private WebElementFacade leftSidebarMenLink;
 
     public boolean isProductInList(String productName){
         waitFor(listOfProductNames.get(0));
@@ -44,6 +46,8 @@ public class SearchResultsPage extends BasePage{
         }
         Collections.sort(sortedList);
         return sortedList.equals(regularPriceToInt);
-
+    }
+    public void clickSideBarMenLink(){
+        clickOn(leftSidebarMenLink);
     }
 }

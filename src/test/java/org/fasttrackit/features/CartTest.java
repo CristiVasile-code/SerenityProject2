@@ -1,13 +1,14 @@
 package org.fasttrackit.features;
 
 import org.fasttrackit.utils.Constants;
+import org.jetbrains.annotations.TestOnly;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class CartTest extends BaseTest{
     @Test
     public void emptyCart(){
-        cartSteps.navigateToCartPage();
+        homepageSteps.navigateToCartPage();
         if(!(cartSteps.isCartEmpty())){
             cartSteps.emptyCart();
         }
@@ -16,7 +17,7 @@ public class CartTest extends BaseTest{
     @Test
     public void totalPrice(){
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
-        cartSteps.navigateToCartPage();
+        homepageSteps.navigateToCartPage();
         cartSteps.emptyCart();
         searchSteps.searchForKeyword("top");
         searchSteps.clickSearchIcon();
@@ -34,4 +35,19 @@ public class CartTest extends BaseTest{
         productSteps.addProductToCart();
         cartSteps.compareTotals();
     }
+    @Test
+    public void testDropDownCartLink(){
+        homepageSteps.clickAccountButton();
+        homepageSteps.goToCartFromDropdown();
+        cartSteps.isCartPageTitleDisplayed();
+    }
+    @Test
+    public void testCartLabelLink(){
+        homepageSteps.clickCartLabelLink();
+        cartSteps.isCartPageTitleDisplayed();
+//        daca nu am produse in cos nu ma duce la pagina de cart !
+
+    }
 }
+
+
