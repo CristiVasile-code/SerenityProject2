@@ -57,4 +57,8 @@ public class ProductTest extends BaseTest{
         checkoutSteps.isCheckOut();
 
     }
+    @Test
+    public void menuSubmenu(){
+        homepageSteps.select();
+    }
 }

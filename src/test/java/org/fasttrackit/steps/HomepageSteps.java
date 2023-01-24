@@ -48,4 +48,8 @@ public class HomepageSteps extends BaseSteps{
     public void clickCartLabelLink(){
         homePage.clickCartLabelLink();
     }
+    @Step
+    public void select(){
+        homePage.click();
+    }
 }

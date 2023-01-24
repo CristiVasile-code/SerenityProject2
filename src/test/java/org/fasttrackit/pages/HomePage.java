@@ -29,6 +29,8 @@ import net.thucydides.core.annotations.DefaultUrl;
         private WebElementFacade cartLabelLink;
         @FindBy(css=".cart-link")
         private WebElementFacade viewShoppingCartLink;
+        @FindBy(css = ".level0.nav-2.parent>a")
+        private WebElementFacade menMenu;
 
 
         public void clickOnAccountButton(){
@@ -64,5 +66,7 @@ import net.thucydides.core.annotations.DefaultUrl;
         public void clickDropdownCartLink(){
             dropDownCartLink.click();
         }
-
+        public void click(){
+            menMenu.selectByIndex(2);
+        }
     }
