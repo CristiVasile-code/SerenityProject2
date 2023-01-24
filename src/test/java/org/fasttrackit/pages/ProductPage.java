@@ -18,12 +18,14 @@ public class ProductPage extends BasePage{
     private WebElementFacade productSize;
     @FindBy(css=".add-to-cart-buttons button")
     private WebElementFacade addToCartButton;
-    @FindBy(css=".product-name span")
-    private WebElementFacade productName;
+//    @FindBy(css=".product-name span")
+//    private WebElementFacade productName;
     @FindBy(css=".link-wishlist")
     private WebElementFacade wishlistLink;
     @FindBy(css=".validation-advice")
     private WebElementFacade requiredFieldMsg;
+    @FindBy(css =".product-name .h1")
+    private WebElementFacade productName;
     public String getProductName(){
         return productName.getText();
     }

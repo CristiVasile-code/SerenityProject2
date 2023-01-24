@@ -51,4 +51,7 @@ public class CartPage extends BasePage{
     public void clickBottomCheckoutBtn(){
         clickOn(bottomCheckOutButton);
     }
+    public String getSuccessMsgText(){
+        return succesMsg.getText();
+    }
 }

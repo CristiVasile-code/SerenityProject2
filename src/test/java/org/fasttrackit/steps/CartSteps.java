@@ -37,4 +37,5 @@ public class CartSteps extends BaseSteps{
     public void clickBottomCheckoutBtn(){
         cartPage.clickBottomCheckoutBtn();
     }
+
 }

@@ -46,4 +46,17 @@ public class ProductSteps extends BaseSteps{
     public void isReqFieldMsgDisplayed(){
         Assert.assertTrue("Trebuia sa apara mesaj si sa nu ma lase sa trec !", productPage.isReqFieldMsgDisplayed());
     }
+    @Step
+    public String getProductName(){
+        return productPage.getProductName();
+    }
+    @Step
+    public void wasProductAdded(String prodName){
+        Assert.assertTrue(cartPage.getSuccessMsgText().equalsIgnoreCase(prodName+" was added to your shopping cart."));
+    }
+    @Step
+    public String getSuccessMsgText(){
+        return cartPage.getSuccessMsgText();
+    }
+
 }

@@ -3,9 +3,10 @@ package org.fasttrackit.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
+import org.openqa.selenium.interactions.Actions;
 
 
-    @DefaultUrl("http://testfasttrackit.info/selenium-test/")
+@DefaultUrl("http://testfasttrackit.info/selenium-test/")
     public class HomePage extends BasePage {
         @FindBy(css = ".skip-account .label")
         private WebElementFacade accountButton;
@@ -31,6 +32,9 @@ import net.thucydides.core.annotations.DefaultUrl;
         private WebElementFacade viewShoppingCartLink;
         @FindBy(css = ".level0.nav-2.parent>a")
         private WebElementFacade menMenu;
+        @FindBy(css = ".level0.nav-2.parent .nav-2-2 a")
+        private WebElementFacade submenu;
+
 
 
         public void clickOnAccountButton(){
@@ -66,7 +70,6 @@ import net.thucydides.core.annotations.DefaultUrl;
         public void clickDropdownCartLink(){
             dropDownCartLink.click();
         }
-        public void click(){
-            menMenu.selectByIndex(2);
-        }
+
+
     }

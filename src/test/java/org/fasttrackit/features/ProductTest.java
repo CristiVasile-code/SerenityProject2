@@ -11,8 +11,14 @@ public class ProductTest extends BaseTest{
         searchSteps.searchForKeyword("top");
         searchSteps.clickSearchIcon();
         searchSteps.selectProduct(1);
+        String prodName = productSteps.getProductName();
+        System.out.println(prodName);
         productSteps.addProductToCart();
-        cartSteps.isCartPageTitleDisplayed();
+        System.out.println(productSteps.getSuccessMsgText());
+//        cartSteps.isCartPageTitleDisplayed();
+        productSteps.wasProductAdded(prodName);
+//        nu stiu cum sa fac sa iau numele produsului inainte sa-l adaug in cart si sa-l
+//        pasez metodei was product added
         //    TODO: nu stiu de ce nu functioneaza verificarea, adica produsul este adaugat, mesajul apare dar totusi testul cade.
     }
     @Test
@@ -57,8 +63,5 @@ public class ProductTest extends BaseTest{
         checkoutSteps.isCheckOut();
 
     }
-    @Test
-    public void menuSubmenu(){
-        homepageSteps.select();
-    }
+
 }
